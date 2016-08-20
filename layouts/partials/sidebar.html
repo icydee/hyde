@@ -6,7 +6,6 @@
       {{ with .Site.Params.description }} {{.}} {{ else }}An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.{{end}}
       </p>
     </div>
-
     <ul class="sidebar-nav">
       <li><a href="/">Home</a> </li>
       {{ range .Site.Menus.main }}
@@ -15,9 +14,17 @@
       {{ range $index, $element := .Site.Menus }}
       <li>
         {{ if not ( eq $index "main" )}}
-          <h5 class="submenu-header">
-            {{ $index }}
-          </h5>
+          {{ $hasLink := isset $.Site.Params.mapping $index }}
+          {{ $prettyName := index $.Site.Params.mapping $index }}
+          {{ if $hasLink }}
+            <a href="{{ $.Site.BaseURL }}{{ $prettyName }}/">
+          {{ end }}
+              <h5 class="submenu-header">
+                {{ $index }}
+              </h5>
+          {{ if $hasLink }}
+            </a>
+          {{ end }}
           <ul class="submenu-nav">
             {{ range $entry := $element }}
               <li><a href="{{.URL}}"> {{ .Name }} </a></li>
