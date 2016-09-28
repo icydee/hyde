@@ -116,6 +116,31 @@ a.sidebar-nav-item:focus {
   list-style: none;
  }
 
+ /* Social icons
+  *
+  *
+  */
+
+ .sidebar ul.sidebar-icons {
+  list-style-type: none;
+  padding-left: 0;
+ }
+
+ .sidebar ul.sidebar-icons li {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin-left: 0px;
+  margin-right: 2px;
+ }
+
+ .sidebar ul.sidebar-icons li i {
+  width:100%;
+  height:100%;
+  font-size:50px;
+  color: rgba(1, 1, 1, 0.25);
+ }
+
 /* Sticky sidebar
  *
  * Add the `sidebar-sticky` class to the sidebar's container to affix it the
@@ -146,7 +171,7 @@ a.sidebar-nav-item:focus {
 @media (min-width: 48em) {
   .content {
     max-width: 38rem;
-    margin-left: 20rem;
+    margin-left: 26rem;
     margin-right: 2rem;
   }
 }

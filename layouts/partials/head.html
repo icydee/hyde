@@ -20,10 +20,17 @@
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/hyde.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
+
   <!-- Custom CSS -->
   {{ if .Site.Params.customCSS }}
     {{ range .Site.Params.customCSS }}
       <link rel="stylesheet" href="{{ $.Site.BaseURL }}{{ .url }}">
+    {{ end }}
+  {{ end }}
+
+  {{ if .Site.Params.customJS }}
+    {{ range .Site.Params.customJS }}
+      <script src="{{ .url }}"></script>
     {{ end }}
   {{ end }}
 
