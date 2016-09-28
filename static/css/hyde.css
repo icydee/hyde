@@ -124,6 +124,7 @@ a.sidebar-nav-item:focus {
  .sidebar ul.sidebar-icons {
   list-style-type: none;
   padding-left: 0;
+  text-align: center;
  }
 
  .sidebar ul.sidebar-icons li {
